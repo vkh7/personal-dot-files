@@ -1,0 +1,36 @@
+;; set font
+(set-default-font "Monlo-13")
+
+;; display columns and lines
+(column-number-mode 1)
+(line-number-mode 1)
+(global-linum-mode 1)
+
+;; nuke trailing whitespaces when writing to a file
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
+;; display only tails of lines longer than 80 columns, tabs and
+;; trailing whitespaces
+(setq whitespace-line-column 80
+      whitespace-style '(face tabs trailing lines-tail))
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.k
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(save-place t nil (saveplace))
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
